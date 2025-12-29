@@ -36,7 +36,7 @@ class ImageScreen:ComponentActivity()
     }
 }
 
-
+// one line
 @Composable
 fun ImageView()
 {
