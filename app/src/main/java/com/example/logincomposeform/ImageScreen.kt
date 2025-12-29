@@ -4,8 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,8 +16,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.semantics.SemanticsProperties.Shape
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.logincomposeform.ui.theme.LoginComposeFormTheme
 
@@ -45,7 +45,7 @@ class ImageScreen:ComponentActivity()
 fun ImageView()
 {
    Column(
-       modifier = Modifier.padding(50.dp),
+       modifier = Modifier.padding(80.dp),
        horizontalAlignment = Alignment.CenterHorizontally,
        verticalArrangement =  Arrangement.Center,
    )
@@ -55,5 +55,26 @@ fun ImageView()
            color = Color.Cyan,
        )
    }
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center,
+    )
+    {
+        val painter = painterResource(R.drawable.ic_launcher_background)
+
+        Image(
+            painter = painter,
+            contentDescription = "This is Android Development",
+            modifier = Modifier.fillMaxSize(),
+            alignment = Alignment.Center,
+            contentScale = ContentScale.Fit,
+            alpha = Float.MAX_VALUE,
+            colorFilter = ColorFilter.tint(color = Color.Transparent)
+        )
+        Text(
+            text ="This is Android Development it is for android development",
+        )
+    }
 
 }
