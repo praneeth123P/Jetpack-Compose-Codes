@@ -14,11 +14,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.logincomposeform.ui.theme.LoginComposeFormTheme
 
 class ImageScreen:ComponentActivity()
@@ -29,7 +32,7 @@ class ImageScreen:ComponentActivity()
         setContent{
             LoginComposeFormTheme {
                 Surface (
-                    color = MaterialTheme.colorScheme.background,
+                    color = Color.Cyan
                 )
                 {
                     ImageView()
@@ -61,19 +64,19 @@ fun ImageView()
         verticalArrangement = Arrangement.Center,
     )
     {
-        val painter = painterResource(R.drawable.ic_launcher_background)
+        val painter = painterResource(R.drawable.andriod)
 
-        Image(
-            painter = painter,
-            contentDescription = "This is Android Development",
-            modifier = Modifier.fillMaxSize(),
-            alignment = Alignment.Center,
-            contentScale = ContentScale.Fit,
-            alpha = Float.MAX_VALUE,
-            colorFilter = ColorFilter.tint(color = Color.Transparent)
-        )
+       Image(
+           painter = painter,
+           contentDescription = "This is image",
+           modifier =Modifier.padding(20.dp),
+           colorFilter = ColorFilter.tint(color = Color.Yellow, blendMode = BlendMode.Multiply)
+       )
         Text(
-            text ="This is Android Development it is for android development",
+            text = "This is Android Developer Image and  here doing mobile appliactions and using kotlin and java but kotlin is best to improvement app performance ",
+            textAlign = TextAlign.Center,
+            color = Color.DarkGray,
+            fontFamily = FontFamily.SansSerif,
         )
     }
 
