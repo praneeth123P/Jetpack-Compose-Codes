@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -52,7 +51,8 @@ fun ImageView()
    {
        Text(
            text = " Android Developer image",
-           color = Color.Cyan,
+           color = Color.Magenta,
+           fontSize = 15.sp
        )
    }
     Column(
