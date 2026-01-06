@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedButton
@@ -21,7 +22,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun CircularButton()
+fun CircularButton(onCircularButton : ()-> Unit )
 {
     val context = LocalContext.current
     Column(
@@ -39,9 +40,15 @@ fun CircularButton()
             colors = ButtonDefaults.outlinedButtonColors(contentColor =  Color.Blue)
         )
         {
-            Icon(Icons.Default.Add ,contentDescription = "content description", tint=Color(0XFF0F9D58))
+            Icon(
+                Icons.Default.Add,
+                contentDescription = "content description",
+                tint = Color(0XFF0F9D58)
+            )
         }
-
-
+    }
+    Button(onClick = onCircularButton )
+    {
+        Toast.makeText(context,"Next Page",Toast.LENGTH_LONG).show()
     }
 }
