@@ -24,7 +24,32 @@ fun AppNavigation()
         }
 
         composable("alert") {
-            Alertdialog()
+            Alertdialog(
+                onNavigateClick = {
+                    navController.navigate("Circular Button")
+                }
+            )
+        }
+
+        composable("Circular Button")
+        {
+            CircularButton(
+                onCircularButton = {
+                    navController.navigate("ConstraintScreenPage")
+                }
+            )
+        }
+        composable("ConstraintScreenPage")
+        {
+            Constraint(
+                onConstarint = {
+                    navController.navigate("Scaffold")
+                }
+            )
+        }
+        composable("Scaffold")
+        {
+            ScaffoldScreen()
         }
     }
 }
